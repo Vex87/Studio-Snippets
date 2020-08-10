@@ -12,6 +12,10 @@ Handler.CreateButton = function(Type)
 	Button = Handler.Toolbar:CreateButton(Type, SettingsModule.Explorer.Button.ToolTip, SettingsModule.Explorer.Button.IconName, SettingsModule.Explorer.Button.Text)
 	Button.ClickableWhenViewportHidden = true
 	
+	if Widget.Enabled then
+		Button:SetActive(true)
+	end
+	
 	Button.Click:Connect(function()	
 		if Widget.Enabled then
 			Button:SetActive(false)
